@@ -47,30 +47,8 @@ class Utilities {
         return(false);
     }
 
-    addEvent(element, className) {
-        element.addEventListener("click", function(){
-            if (element.classList.contains(className)) {
-                element.classList.remove(className);
-            } else {
-                element.classList.add(className);
-            }
-
-            let selected = document.getElementsByClassName(className);
-
-            let filters = document.getElementById("filter");
-
-            if (selected.length > 0) {
-                filters.classList.replace("hide", "show");
-            } else {
-                filters.classList.replace("show", "hide");
-            }
-        });
-
-        return element;
-    }
-
-    addTouchEvent(element, className) {
-        element.addEventListener("touchstart", function(){
+    addEvent(event, element, className) {
+        element.addEventListener(event, function(){
             if (element.classList.contains(className)) {
                 element.classList.remove(className);
             } else {
