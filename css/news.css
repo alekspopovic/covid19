@@ -477,9 +477,18 @@ g.ct-grids line.ct-grid {
         width: 60%;
         margin: auto;
     }
-
+    
     #drawButton {
         margin-top: 1em;
+    }
+
+    #legend {
+        margin-bottom: 9em;
+    }
+
+    #chart .ct-legend {
+        font-size: 0.7em;
+        top: -11em;
     }
 }
 
