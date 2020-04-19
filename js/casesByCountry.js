@@ -21,6 +21,7 @@ fetch(apiEndpoint, requestOptions)
     data.forEach(country => {
         countryDiv = utilities.createElement("div", "data", "");
         countryDiv = utilities.addEvent(countryDiv, "selected");
+        countryDiv = utilities.addTouchEvent(countryDiv, "selected");
         countryDiv.setAttribute("data-value", country.country.toLowerCase());
 
         countryNameDiv = utilities.createElement("div", "", country.country);
