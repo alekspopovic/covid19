@@ -44,7 +44,7 @@ submitButton.addEventListener("click", function() {
 
     let allCountries = countries.join(',');
 
-    let url = `/?countries=${allCountries}`;
+    let url = `/covid19/?countries=${allCountries}`;
 
     if (cases) {
         url =`${url}&cases=true`;
