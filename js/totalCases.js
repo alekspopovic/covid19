@@ -1,13 +1,13 @@
 var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-  };
+  method: "GET",
+  redirect: "follow",
+};
 
-const apiEndpoint = "https://corona.lmao.ninja/v2/all";
-  
+const apiEndpoint = "https://disease.sh/v3/covid-19/all";
+
 fetch(apiEndpoint, requestOptions)
-.then(response => response.text())
-.then(result => {
+  .then((response) => response.text())
+  .then((result) => {
     let totalCasesDiv = document.getElementById("totalCases");
 
     let data = JSON.parse(result);
@@ -24,12 +24,13 @@ fetch(apiEndpoint, requestOptions)
                     <p>Deaths: ${deaths.toLocaleString()}</p>
                     <p>Recovered: ${recovered.toLocaleString()}</p>
                     <p>Death rate: ${deathRateRounded}%</p>`;
-    
+
     totalCasesDiv.innerHTML = dataText;
-})
-.catch(error => {
-    console.log('error', error);
+  })
+  .catch((error) => {
+    console.log("error", error);
 
     let news = document.getElementsByClassName("news")[0];
-    news.innerHTML = "There was an error while retrieving data. Please try again. " + error;
-});
+    news.innerHTML =
+      "There was an error while retrieving data. Please try again. " + error;
+  });
